@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catégories FFTir – GSEM NICE</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+<!-- SEO et réseaux sociaux -->
+<meta name="description" content="Déterminez votre catégorie FFTir pour GSEM Nice selon votre date de naissance.">
+<meta property="og:title" content="Catégories FFTir – GSEM NICE">
+<meta property="og:description" content="Déterminez votre catégorie FFTir pour GSEM Nice selon votre date de naissance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gsem-nice.fr/categories.html">
+<meta property="og:image" content="favicon.ico">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Segoe UI", Roboto, Arial, sans-serif; background:linear-gradient(135deg,#0a192f,#1e3a8a); color:#f0f0f0; line-height:1.6; }
+header { background: rgba(0,0,0,0.7); backdrop-filter:blur(6px); padding:40px 20px; text-align:center; border-bottom:4px solid #facc15; box-shadow:0 4px 15px rgba(0,0,0,0.6); }
+header h1 { font-size:36px; color:#facc15; letter-spacing:2px; text-transform:uppercase; }
+header p { font-size:18px; color:#d1d5db; }
+main { width:95%; max-width:1100px; margin:50px auto; padding:20px; background:rgba(255,255,255,0.05); border-radius:16px; box-shadow:0 6px 25px rgba(0,0,0,0.4); }
+h2 { border-left:6px solid #facc15; padding-left:12px; margin-bottom:25px; font-size:24px; color:#facc15; }
+table { width:100%; border-collapse:collapse; margin-bottom:40px; border-radius:10px; overflow:hidden; }
+th, td { padding:14px; text-align:center; }
+th { background:#facc15; color:#111; font-size:16px; text-transform:uppercase; }
+tr:nth-child(even) td { background:rgba(255,255,255,0.07); }
+tr:nth-child(odd) td { background:rgba(255,255,255,0.03); }
+tr:hover td { background:rgba(250,204,21,0.2); transition: background 0.3s; }
+label { display:block; margin:20px 0 10px; font-weight:bold; font-size:18px; color:#facc15; }
+input[type="date"] { padding:10px; font-size:16px; border-radius:8px; border:none; background:rgba(255,255,255,0.1); color:#000; width:250px; }
+button { margin-top:20px; margin-bottom:20px; padding:12px 25px; background:#facc15; border:none; border-radius:8px; cursor:pointer; font-size:16px; font-weight:bold; transition:all 0.3s; }
+button:hover { background:#eab308; transform:scale(1.05); }
+#reponse { margin-top:30px; margin-bottom:50px; font-size:22px; font-weight:bold; color:#fff; padding:20px; background:rgba(250,204,21,0.15); border:2px solid #facc15; border-radius:10px; display:none; text-align:center; box-shadow:0 0 15px rgba(250,204,21,0.4); opacity:0; transform:translateY(20px); transition:opacity 0.6s, transform 0.6s; }
+#reponse.show { display:block; opacity:1; transform:translateY(0); }
+footer { margin-top:50px; background: rgba(0,0,0,0.7); padding:20px; text-align:center; font-size:14px; color:#d1d5db; border-top:3px solid #facc15; }
+
+/* Responsive */
+@media(max-width:768px){
+  main{width:95%; max-width:500px; margin:auto;}
+  input[type="date"], button{width:100%;}
+  table{display:block; overflow-x:auto; white-space:nowrap;}
+  header h1{font-size:24px;}
+  header p{font-size:14px;}
+  h2{font-size:20px;}
+  th,td{font-size:14px;padding:10px;}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Catégories FFTir</h1>
+<p>GSEM NICE</p>
+</header>
+
+<main>
+<h2>Déterminez votre catégorie</h2>
+<label for="date">Votre date de naissance :</label>
+<input type="date" id="date" required>
+<br>
+<button type="button" onclick="calculs()">Calculer ma catégorie</button>
+<button type="button" onclick="imprimer()">Imprimer / Télécharger</button>
+
+<div id="reponse" role="status" aria-live="polite">
+Catégorie : <span id="categorie"></span>
+</div>
+
+<h2>Tableau des catégories 2025 / 2026</h2>
+<table>
+<thead>
+<tr><th>Catégorie</th><th>Années de naissance</th></tr>
+</thead>
+<tbody>
+<tr><td>Poussins filles</td><td>Nées après le 31/12/2015</td></tr>
+<tr><td>Poussins garçons</td><td>Nés après le 31/12/2015</td></tr>
+<tr><td>Benjamins filles</td><td>Nées entre le 01/01/2014 et le 31/12/2015</td></tr>
+<tr><td>Benjamins garçons</td><td>Nés entre le 01/01/2014 et le 31/12/2015</td></tr>
+<tr><td>Minimes filles</td><td>Nées entre le 01/01/2012 et le 31/12/2013</td></tr>
+<tr><td>Minimes garçons</td><td>Nés entre le 01/01/2012 et le 31/12/2013</td></tr>
+<tr><td>Cadets filles</td><td>Nées entre le 01/01/2009 et le 31/12/2011</td></tr>
+<tr><td>Cadets garçons</td><td>Nés entre le 01/01/2009 et le 31/12/2011</td></tr>
+<tr><td>Juniors filles</td><td>Nées entre le 01/01/2006 et le 31/12/2008</td></tr>
+<tr><td>Juniors garçons</td><td>Nés entre le 01/01/2006 et le 31/12/2008</td></tr>
+<tr><td>Dames 1</td><td>Nées entre le 01/01/1981 et le 31/12/2005</td></tr>
+<tr><td>Seniors 1</td><td>Nés entre le 01/01/1981 et le 31/12/2005</td></tr>
+<tr><td>Dames 2</td><td>Nées entre le 01/01/1966 et le 31/12/1980</td></tr>
+<tr><td>Seniors 2</td><td>Nés entre le 01/01/1966 et le 31/12/1980</td></tr>
+<tr><td>Dames 3</td><td>Nées avant le 01/01/1966</td></tr>
+<tr><td>Seniors 3</td><td>Nés avant le 01/01/1966</td></tr>
+<tr><td>Vétérans 18m/IR900 Dames</td><td>Nées avant le 01/01/1975</td></tr>
+<tr><td>Vétérans 18m/IR900 Seniors</td><td>Nés avant le 01/01/1975</td></tr>
+</tbody>
+</table>
+</main>
+
+<footer>
+© <span id="annee"></span> GSEM NICE – Tous droits réservés
+</footer>
+
+<script>
+function calculs(){
+  const input = document.getElementById("date");
+  const inputValue = input.value;
+
+  if(!inputValue){ 
+    alert("Veuillez entrer votre date de naissance !");
+    return;
+  }
+
+  // ✅ Parsing universel compatible Safari iOS
+  const parts = inputValue.split("-");
+  const dateNaissance = new Date(parts[0], parts[1]-1, parts[2]);
+
+  if(isNaN(dateNaissance.getTime())){ 
+    alert("Date invalide !");
+    return;
+  }
+
+  let categorie = "";
+  const limits=[
+    {cat:"Poussin (filles/garçons)", debut:new Date(2016,0,1), fin:new Date(2100,11,31)},
+    {cat:"Benjamin (filles/garçons)", debut:new Date(2014,0,1), fin:new Date(2015,11,31)},
+    {cat:"Minime (filles/garçons)", debut:new Date(2012,0,1), fin:new Date(2013,11,31)},
+    {cat:"Cadet (filles/garçons)", debut:new Date(2009,0,1), fin:new Date(2011,11,31)},
+    {cat:"Junior (filles/garçons)", debut:new Date(2006,0,1), fin:new Date(2008,11,31)},
+    {cat:"Dame 1 / Senior 1", debut:new Date(1981,0,1), fin:new Date(2005,11,31)},
+    {cat:"Dame 2 / Senior 2", debut:new Date(1966,0,1), fin:new Date(1980,11,31)},
+    {cat:"Dame 3 / Senior 3", debut:new Date(1900,0,1), fin:new Date(1965,11,31)},
+  ];
+
+  for(let l of limits){
+    if(dateNaissance >= l.debut && dateNaissance <= l.fin){ 
+      categorie = l.cat; 
+      break;
+    }
+  }
+
+  if(dateNaissance <= new Date(1974,11,31)){
+    categorie += " – Vétéran 18m/IR900"; 
+  }
+
+  document.getElementById("categorie").innerText = categorie;
+  document.getElementById("reponse").classList.add("show");
+}
+
+function imprimer(){
+  const cat=document.getElementById("categorie").innerText;
+  if(!cat){ alert("Veuillez calculer votre catégorie d'abord !"); return; }
+
+  // ✅ Safari iOS : ouverture d’une fenêtre dédiée
+  const w = window.open("", "Impression", "height=600,width=800");
+  w.document.write(`
+    <html>
+      <head>
+        <title>Catégorie FFTir</title>
+        <style>
+          body { font-family: Arial, sans-serif; text-align:center; padding:40px; }
+          h2 { color:#facc15; }
+          p { font-size:22px; font-weight:bold; }
+        </style>
+      </head>
+      <body>
+        <h2>Votre catégorie FFTir :</h2>
+        <p>${cat}</p>
+        <script>
+          window.onload = function(){ window.print(); }
+        <\/script>
+      </body>
+    </html>
+  `);
+  w.document.close();
+}
+
+document.getElementById("annee").innerText=new Date().getFullYear();
+</script>
+</body>
+</html>
